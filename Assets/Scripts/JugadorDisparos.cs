@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class JugadorDisparos : MonoBehaviour
 {
-    Transform salidaBala;
+    [SerializeField]Transform salidaBala;
     float proximoDisparo = 0f;
     float tiempoEspera = 0.3f;
     public GameObject bala;
 
     void Start()
     {
-        salidaBala = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        //salidaBala = GameObject.FindGameObjectWithTag("MainCamera").transform;
     }
 
     // Update is called once per frame
@@ -20,8 +20,8 @@ public class JugadorDisparos : MonoBehaviour
         if(Time.time >= proximoDisparo && Input.GetMouseButtonDown(0))
         {
             proximoDisparo = Time.time + tiempoEspera;
-            Debug.Log("1- He disparado");
             GameObject nuevaBala = Instantiate(bala, salidaBala.position, salidaBala.rotation);
+            Debug.Log("1- He disparado\nRotacion: " + salidaBala.rotation);
         }
         
     }
