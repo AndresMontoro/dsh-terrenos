@@ -16,6 +16,6 @@ public class MovimientoBala : MonoBehaviour
     void Update()
     {
         float movDistancia = velocidad * Time.deltaTime;
-        transform.Translate(Vector3.forward * movDistancia);
+        transform.Translate(Vector3.left * movDistancia);
     }
 }
